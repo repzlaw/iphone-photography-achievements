@@ -17,5 +17,19 @@ class BadgeService{
         return $current_badge;
     }
 
+    /**
+     * The customers next badge.
+     */
+    public function next_badge(User $user)
+    {
+        $current_badge =  $this->current_badge($user);
+
+        $next_badge =  Badge::where('value', '>', $current_badge->value)
+                            ->orderBy('value','asc')->first();
+
+        return $next_badge ? $next_badge : '';
+
+    }
+
 
 }
