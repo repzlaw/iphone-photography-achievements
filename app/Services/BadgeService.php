@@ -31,5 +31,21 @@ class BadgeService{
 
     }
 
+    /**
+     * The number of additional achievements the user must unlock to earn the next badge.
+     */
+    public function remaining_to_unlock_next_badge(User $user)
+    {
+        $next_badge = $this->next_badge($user);
+        
+        if ($next_badge){
+            $achievements = $user->achievements->count();
+            $remaining_achievement = $next_badge->value - $achievements;
 
+            return $remaining_achievement;
+        }
+
+        return 0;
+
+    }
 }
