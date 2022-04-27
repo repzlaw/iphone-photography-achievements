@@ -8,7 +8,9 @@ Worked on all features specified :
 
 - Unlocking Achievements (listens for user events and unlocks the relevant achievement).
 - Unlocking Badges (listens for when a user unlocks enough achievement to earn a new badge).
-- Achievements Endpoint (returns unlocked_achievements, next_available_achievements, current_badge, next_badge, remaining_to_unlock_next_badge).
+- Achievements Endpoint 
+  - (returns unlocked_achievements, next_available_achievements, current_badge, next_badge, remaining_to_unlock_next_badge).
+- cached response to optimize application and reduce load time.
 
 ### HOW TO INSTALL
 
@@ -26,4 +28,4 @@ Worked on all features specified :
 
 - run test using ` composer test` or `./vendor/bin/phpunit`
 
-### you are all set!!!
+ you are all set!!!
