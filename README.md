@@ -8,8 +8,12 @@ Worked on all features specified :
 
 - Unlocking Achievements (listens for user events and unlocks the relevant achievement).
 - Unlocking Badges (listens for when a user unlocks enough achievement to earn a new badge).
-- Achievements Endpoint 
-  - (returns unlocked_achievements, next_available_achievements, current_badge, next_badge, remaining_to_unlock_next_badge).
+- Achievements Endpoint returns a json response of
+  - An array of the user’s unlocked achievements by name.
+  - An array of the next achievements the user can unlock by name.
+  - The name of the user’s current badge.
+  - The name of the next badge the user can earn.
+  - The number of additional achievements the user must unlock to earn the next badge.
 - cached response to optimize application and reduce load time.
 
 ### HOW TO INSTALL
