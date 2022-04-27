@@ -21,7 +21,7 @@ class AchievementsController extends Controller
             return response()->json([
                 'unlocked_achievements' => (new AchievementService)->unlocked_achievements($user),
                 'next_available_achievements' => (new AchievementService)->next_available_achievements($user),
-                'current_badge' => (new BadgeService)->current_badge($user)->name,
+                'current_badge' => (new BadgeService)->current_badge($user) ? (new BadgeService)->current_badge($user)->name : '',
                 'next_badge' => (new BadgeService)->next_badge($user) ? (new BadgeService)->next_badge($user)->name : '',
                 'remaining_to_unlock_next_badge' => (new BadgeService)->remaining_to_unlock_next_badge($user)
             ]);
